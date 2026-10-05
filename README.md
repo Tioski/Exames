@@ -451,4 +451,4 @@ O Node.js não está instalado ou não está no PATH. Instale em [nodejs.org](ht
 
 Feito por **Tioski** — Programação para Internet 2.
 
-[![GitHub](https://img.shields.io/badge/GitHub-SEU--USUARIO-181717?logo=github)](https://github.com/SEU-USUARIO)
+[![GitHub](https://img.shields.io/badge/GitHub-Tioski-181717?logo=github)](https://github.com/Tioski)
