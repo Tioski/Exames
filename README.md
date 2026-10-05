@@ -447,21 +447,8 @@ O Node.js não está instalado ou não está no PATH. Instale em [nodejs.org](ht
 
 ---
 
-## 🔮 Melhorias futuras
-
-- [ ] Validar no backend que o `status` seja apenas `Pendente` ou `Realizado`
-- [ ] Ordenar a listagem (ex.: por data ou por status)
-- [ ] Adicionar data de realização e campo de resultado do exame
-- [ ] Busca e filtros por paciente, tipo e status
-- [ ] Paginação da lista
-- [ ] Autenticação de usuários
-- [ ] Testes automatizados
-- [ ] Deploy (API + banco na nuvem)
-
----
-
 ## 👤 Autor
 
-Feito por **Seu Nome** — Programação para Internet 2.
+Feito por **Tioski** — Programação para Internet 2.
 
 [![GitHub](https://img.shields.io/badge/GitHub-SEU--USUARIO-181717?logo=github)](https://github.com/SEU-USUARIO)
