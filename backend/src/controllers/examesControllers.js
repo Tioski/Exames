@@ -1,19 +1,54 @@
-const examesModel = require("../models/examesModels");
+const Exame = require('../models/examesModels');
 
-const listarExames = (req, res) => {
-    examesModel.listarExames((error, resultados) => {
-        if (error) {
-            console.error("Erro ao buscar exames:", error);
-
-            return res.status(500).json({
-                mensagem: "Erro ao buscar exames"
-            });
+exports.createExame = async (req, res) => {
+    try {
+        const { paciente, tipo_exame } = req.body;
+        if (!paciente || !tipo_exame) {
+            return res.status(400).json({ erro: 'Paciente e tipo de exame são obrigatórios' });
         }
-
-        res.status(200).json(resultados);
-    });
+        const newExame = await Exame.create(paciente, tipo_exame);
+        res.status(201).json(newExame);
+    } catch (error) {
+        res.status(500).json({ erro: error.message });
+    }
 };
 
-module.exports = {
-    listarExames
+exports.getAllExames = async (req, res) => {
+    try {
+        const exames = await Exame.findAll();
+        res.json(exames);
+    } catch (error) {
+        res.status(500).json({ erro: error.message });
+    }
+};
+
+exports.updateExame = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { paciente, tipo_exame, status } = req.body;
+        if (!paciente || !tipo_exame || !status) {
+            return res.status(400).json({ erro: 'Paciente, tipo de exame e status são obrigatórios' });
+        }
+
+        const updated = await Exame.update(id, paciente, tipo_exame, status);
+        if (!updated) {
+            return res.status(404).json({ erro: 'Registro não encontrado' });
+        }
+        res.json(updated);
+    } catch (error) {
+        res.status(500).json({ erro: error.message });
+    }
+};
+
+exports.deleteExame = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const success = await Exame.delete(id);
+        if (!success) {
+            return res.status(404).json({ erro: 'Registro não encontrado' });
+        }
+        return res.status(204).send();
+    } catch (error) {
+        res.status(500).json({ erro: error.message });
+    }
 };

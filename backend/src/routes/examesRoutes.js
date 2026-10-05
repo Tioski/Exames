@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const examesController = require('../controllers/examesController');
+const examesControllers = require('../controllers/examesControllers');
 
-router.post('/exames', examesController.createExame)
-router.get('/exames', examesController.getAllExames)
-router.put('/exames/:id', examesController.updateExame)
-router.delete('/exames/:id', examesController.deleteExame)
+router.post('/exames', examesControllers.createExame);
+router.get('/exames', examesControllers.getAllExames);
+router.put('/exames/:id', examesControllers.updateExame);
+router.delete('/exames/:id', examesControllers.deleteExame);
 
 module.exports = router;

@@ -1,4 +1,4 @@
-/* Estilo simples e limpo: fundo branco */
+
 
 * {
     margin: 0;
@@ -59,8 +59,7 @@ header h1 {
     gap: 10px;
 }
 
-#exame-form input,
-#exame-form select {
+#exame-form input {
     padding: 11px 12px;
     border: 1px solid #cccccc;
     border-radius: 6px;
@@ -68,8 +67,7 @@ header h1 {
     background: #ffffff;
 }
 
-#exame-form input:focus,
-#exame-form select:focus {
+#exame-form input:focus {
     outline: none;
     border-color: #2563eb;
 }
@@ -158,6 +156,7 @@ header h1 {
     display: flex;
     gap: 6px;
     flex-shrink: 0;
+    align-items: center;
 }
 
 .exame-actions button {
@@ -173,6 +172,23 @@ header h1 {
     background-color: #f3f4f6;
 }
 
+.checklist-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-right: 4px;
+    font-size: 0.82rem;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.realizado-checkbox {
+    width: 17px;
+    height: 17px;
+    accent-color: #16804a;
+    cursor: pointer;
+}
+
 .exame-actions .delete-btn {
     color: #b91c1c;
     border-color: #fca5a5;
@@ -182,4 +198,15 @@ header h1 {
     text-align: center;
     color: #888888;
     padding: 20px;
+}
+
+@media (max-width: 520px) {
+    .exame-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .exame-actions {
+        flex-wrap: wrap;
+    }
 }
