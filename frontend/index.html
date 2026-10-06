@@ -3,43 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exames</title>
-
-    <!-- Nosso arquivo de estilos CSS -->
+    <meta name="theme-color" content="#f5f8f6">
+    <meta name="description" content="Organize e acompanhe os exames dos seus pacientes.">
+    <title>Exames | Acompanhamento</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Container central do nosso App -->
     <div class="app-container">
-
-        <!-- Cabeçalho -->
-        <header>
-            <h1>Exames</h1>
+        <header class="page-header">
+            <div class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M12 3.5v17M3.5 12h17" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div>
+                <p class="eyebrow">CUIDADO EM DIA</p>
+                <h1>Exames</h1>
+                <p class="page-description">Organize os exames e acompanhe cada etapa.</p>
+            </div>
         </header>
 
-        <!-- Sumário: mostra a quantidade de exames realizados -->
         <section class="summary-card">
-            <span>Realizados</span>
-            <strong id="counter-text">0/0</strong>
+            <div class="summary-copy">
+                <span class="summary-label">Acompanhamento</span>
+                <strong>Exames realizados</strong>
+                <span class="summary-hint">Seu progresso até aqui</span>
+            </div>
+            <div class="summary-count" aria-label="Exames realizados">
+                <strong id="counter-text">0/0</strong>
+            </div>
         </section>
 
-        <!-- Formulário para adicionar ou editar um exame -->
-        <section class="input-area">
-            <label id="form-label">Cadastrar exame</label>
+        <section class="input-area panel" aria-labelledby="form-label">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">NOVO REGISTRO</p>
+                    <h2 id="form-label">Cadastrar exame</h2>
+                </div>
+            </div>
             <form id="exame-form">
-                <input type="text" id="paciente-input" placeholder="Paciente" maxlength="100" required>
-                <input type="text" id="tipo-input" placeholder="Tipo de exame" maxlength="100" required>
+                <div class="field">
+                    <label for="paciente-input">Paciente</label>
+                    <input type="text" id="paciente-input" placeholder="Nome do paciente" maxlength="100" required>
+                </div>
+                <div class="field">
+                    <label for="tipo-input">Tipo de exame</label>
+                    <input type="text" id="tipo-input" placeholder="Ex.: Hemograma completo" maxlength="100" required>
+                </div>
                 <div class="form-buttons">
-                    <button type="submit" id="submit-btn">Salvar</button>
+                    <button type="submit" id="submit-btn">Salvar exame</button>
                     <button type="button" id="cancel-btn" class="hidden">Cancelar</button>
                 </div>
             </form>
         </section>
 
-        <!-- Lista de exames: será preenchida pelo Javascript -->
-        <ul class="exame-list" id="exame-list"></ul>
-
+        <section class="list-section" aria-labelledby="list-heading">
+            <div class="section-heading list-heading">
+                <div>
+                    <p class="eyebrow">VISÃO GERAL</p>
+                    <h2 id="list-heading">Exames cadastrados</h2>
+                </div>
+            </div>
+            <ul class="exame-list" id="exame-list"></ul>
+        </section>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios@1.20.0/dist/axios.min.js"></script>
