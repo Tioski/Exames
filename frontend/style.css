@@ -98,7 +98,7 @@ input {
     overflow: hidden;
     border: 1px solid #dcebe1;
     border-radius: 20px;
-    background: linear-gradient(115deg, #eaf5ed 0%, #f3f8f3 100%);
+    background: #fff;
 }
 
 .summary-copy {
